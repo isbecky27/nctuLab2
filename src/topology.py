@@ -7,18 +7,16 @@ from mininet.util import dumpNodeConnections
 from mininet.log import setLogLevel 
 from mininet.cli import CLI
 
-'''
-Single switch connected to one host.
-'''
-class SingleSwitchTopo(Topo):
+
+class SwitchTopo(Topo):
     def build(self):
-        # Add all switches to a topology
+        # Add all switches s1~s5 to a topology
         s1 = self.addSwitch('s1')
         s2 = self.addSwitch('s2')
         s3 = self.addSwitch('s3')
         s4 = self.addSwitch('s4')
         s5 = self.addSwitch('s5')
-        # Add all hosts to a topology
+        # Add all hosts h1~h10 to a topology
         h1 = self.addHost('h1')
         h2 = self.addHost('h2')
         h3 = self.addHost('h3')
@@ -29,84 +27,98 @@ class SingleSwitchTopo(Topo):
         h8 = self.addHost('h8')
         h9 = self.addHost('h9')
         h10 = self.addHost('h10')
+        # Add link between s2 s1
         self.addLink(
 			s2,
 			s1,
 			bw = 30,
 	        delay = '87us',
 	        loss = 3)
+		# Add link between s3 s1
         self.addLink(
 	        s3,
 	        s1,
 	        bw = 35,
 	        delay = '48us',
-	        loss = 6)
+	        loss = 2)
+		# Add link between s4 s1
         self.addLink(
 	        s4,
 	        s1,
 	        bw = 38,
 	        delay = '76us',
 	        loss = 4)
+		# Add link between s5 s1
         self.addLink(
 	        s5,
 	        s1,
 	        bw = 40,
 	        delay = '52us',
 	        loss = 2)
+		# Add link between h1 s2
         self.addLink(
 	        h1,
 	        s2,
 	        bw = 14,
 	        delay = '5ms',
 	        loss = 13)
+		# Add link between h2 s2
         self.addLink(
 	        h2,
 	        s2,
 	        bw = 12,
 	        delay = '4ms',
 	        loss = 15)
+		# Add link between h3 s3
         self.addLink(
 	        h3,
 	        s3,
 	        bw = 15,
 	        delay = '3ms',
 	        loss = 8)
+		# Add link between h4 s3
         self.addLink(
 	        h4,
 	        s3,
 	        bw = 11,
 	        delay = '2ms',
 	        loss = 9)
+		# Add link between h5 s1
         self.addLink(
 	        h5,
 	        s1,
 	        bw = 22,
 	        delay = '3ms',
 	        loss = 9)
+		# Add link between h6 s1
         self.addLink(
 	        h6,
 	        s1,
 	        bw = 25,
 	        delay = '1ms',
 	        loss = 7)
+		# Add link between h7 s1
         self.addLink(
 	        h7,
 	        s1,
 	        bw = 18,
 	        delay = '4ms',
 	        loss = 6)
+		# Add link between h8 s1
         self.addLink(
 	        h8,
 	        s1,
 	        bw = 20,
 	        delay = '2ms',
 	        loss = 8)
+		# Add link between h9 s4
         self.addLink(
 	        h9,
 	        s4,
 	        bw = 30,
 	        delay = '7ms',
 	        loss = 12)
+		# Add link between h10 s5
         self.addLink(
 	        h10,
 	        s5,
@@ -119,7 +131,7 @@ Create and test a simple network
 '''
 def simpleTest():
     # Create a topology with 2 hosts and 1 switch
-    topo = SingleSwitchTopo()
+    topo = SwitchTopo()
     # Create and manage a network with a OvS controller and use TCLink
     net = Mininet(
         topo = topo, 
