@@ -39,7 +39,12 @@ In this lab, we are going to write a Python program which can generate a network
 > * Describe how you finish this work step-by-step in detail
 
 1. **Environment Setup**
-
+- 首先先載PieTTY IP位址為140.133.195.69 port為13316(學號末5碼)
+- 登入 Login:root Password:cn2018
+- 輸入指令:git clone https://github.com/nctucn/lab2-isbecky27.git Network_Topology 將檔案載下來 
+- 接著登入github Username for 'https://github.com': isbecky27 Password for 'https://isbecky27@github.com': <Github Password>
+- 試著執行 Mininet 使用指令:sudo mn 則接下來若跑出錯誤訊息 例如:You may wish to try "service ....
+- 則輸入指令:sudo service openvswitch-switch start 然後再執行一次 sudo mn 即可 
 
 2. **Example of Mininet**
 
