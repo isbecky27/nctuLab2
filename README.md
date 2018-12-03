@@ -20,7 +20,7 @@ In this lab, we are going to write a Python program which can generate a network
 > * Describe how to execute your program
 > * Show the screenshot of using iPerf command in Mininet
 
-        ![image](https://github.com/nctucn/lab2-isbecky27/blob/master/result.jpg)
+    ![alt text](https://github.com/nctucn/lab2-isbecky27/blob/master/result.jpg)
       
 ---
 ## Description
