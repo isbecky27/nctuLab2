@@ -35,6 +35,15 @@ In this lab, we are going to write a Python program which can generate a network
 > TODO:
 > * Describe the meaning of iPerf command you used in detail
 
+Topo2.png iPref指令
+mininet> h6 iperf -s -u -i 1 > ./out/result &
+mininet> h3 iperf -c 10.0.0.6 -u –i 1
+   - -s 以server模式啟動
+   - -u 使用udp協議
+   - -i 每隔多少秒更新頻寬資訊
+   - -c 執行client模式啟動，並連線到server的IP
+
+
 ### Tasks
 
 > TODO:
@@ -44,31 +53,42 @@ In this lab, we are going to write a Python program which can generate a network
    - 首先先載PieTTY IP位址為140.133.195.69 port為13316(學號末5碼)
    - 登入 Login:root Password:cn2018
    - 輸入指令:git clone https://github.com/nctucn/lab2-isbecky27.git Network_Topology 將檔案複製下來
-   - 接著登入github Username for 'https://github.com': isbecky27 和 Password for 'https://isbecky27@github.com': 密碼
-   - 試著執行 Mininet 使用指令:sudo mn 接下來若跑出錯誤訊息 如:You may wish to try "service ....
+   - 接著登入github Username for 'https://github.com': isbecky27 
+     和 Password for 'https://isbecky27@github.com': 密碼
+   - 試著執行 Mininet 使用指令:sudo mn 接下來若跑出錯誤訊息
+     如:You may wish to try "service openvswitch-switch start".
    - 則輸入指令:sudo service openvswitch-switch start 然後再執行一次 sudo mn 即可
 
 2. **Example of Mininet**
    - 試著執行example.py 記得將路徑跳至/root/Network_Topology/src/
    - 輸入指令執行example.py:sudo chmod +x example.py 和 sudo ./example.py
    - 則會出現以下的結果
-   - 若跳出錯誤訊息 如:Exception: Error creating interface pair (s1-eth1,s2eth1)...
+   - 若跳出錯誤訊息 如:Exception: Error creating interface pair (s1-eth1,s2eth1): 
+                      RTNETLINK answers: File exist
    - 則輸入指令:sudo mn -c 將其清乾淨後重新執行一次即可
 
 3. **Topology Generator**
    - 13316%3(學號末5碼%3)=2 找出自己要做的圖 topo2.png
-   - 依照topo2.png的圖 寫一個檔名為topology.py的python程式
-   - 
-   -
-
+   - 依照topo2.png的圖 寫一個檔名為topology.py的python程式 並將放在和example.py同層
+   - 執行topology.py
+   - 若跳出錯誤訊息 如:Exception: Error creating interface pair (s1-eth1,s2eth1):
+                      RTNETLINK answers: File exist
+   - 則輸入指令:sudo mn -c 將其清乾淨後重新執行一次即可
 
 4. **Measurement**
+   - 用iPerf指令去測試topology.py
+   - topo2.png的測試指令: mininet> h6 iperf -s -u -i 1 > ./out/result &
+                         mininet> h3 iperf -c 10.0.0.6 -u –i 1
+   - 最後的result會在out的資料夾裡
+   - 而packet loss的機率應介於13~18%之間
 
 ---
 ## References
 
 > TODO: 
 > * Please add your references in the following
+
+https://blog.xuite.net/u870q217/blog/31513614-Iperf%E9%A0%BB%E5%AF%AC%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7
 
 * **Mininet**
     * [Mininet Walkthrough](http://mininet.org/walkthrough/)
