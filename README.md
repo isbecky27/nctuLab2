@@ -71,19 +71,19 @@ In this lab, we are going to write a Python program which can generate a network
     * [Introduction to Mininet](https://github.com/mininet/mininet/wiki/Introduction-to-Mininet)
     * [Mininet Python API Reference Manual](http://mininet.org/api/annotated.html)
     * [A Beginner's Guide to Mininet](https://opensourceforu.com/2017/04/beginners-guide-mininet/)
-    * [GitHub/OSE-Lab - ç†Ÿæ‚‰å¦‚ä½•ä½¿ç”¨ Mininet](https://github.com/OSE-Lab/Learning-SDN/blob/master/Mininet/README.md)
-    * [è¸é…’ç”Ÿçš„è¨˜äº‹æœ¬ â€“ Mininet ç­†è¨˜](https://blog.laszlo.tw/?p=81)
-    * [Hwchiu Learning Note â€“ æ‰‹æŠŠæ‰‹æ‰“é€ ä»¿ mininet ç¶²è·¯](https://hwchiu.com/setup-mininet-like-environment.html)
-    * [é˜¿å¯¬çš„å¯¦é©—å®¤ â€“ Mininet æŒ‡ä»¤ä»‹ç´¹](https://ting-kuan.blog/2017/11/09/%E3%80%90mininet%E6%8C%87%E4%BB%A4%E4%BB%8B%E7%B4%B9%E3%80%91/)
-    * [Mininet å­¸ç¿’æŒ‡å—](https://www.sdnlab.com/11495.html)
+    * [GitHub/OSE-Lab - 熟悉如何使用 Mininet](https://github.com/OSE-Lab/Learning-SDN/blob/master/Mininet/README.md)
+    * [菸酒生的記事本 – Mininet 筆記](https://blog.laszlo.tw/?p=81)
+    * [Hwchiu Learning Note – 手把手打造仿 mininet 網路](https://hwchiu.com/setup-mininet-like-environment.html)
+    * [阿寬的實驗室 – Mininet 指令介紹](https://ting-kuan.blog/2017/11/09/%E3%80%90mininet%E6%8C%87%E4%BB%A4%E4%BB%8B%E7%B4%B9%E3%80%91/)
+    * [Mininet 學習指南](https://www.sdnlab.com/11495.html)
 * **Python**
     * [Python 2.7.15 Standard Library](https://docs.python.org/2/library/index.html)
     * [Python Tutorial - Tutorialspoint](https://www.tutorialspoint.com/python/)
 * **Others**
     * [iPerf3 User Documentation](https://iperf.fr/iperf-doc.php#3doc)
     * [Cheat Sheet of Markdown Syntax](https://www.markdownguide.org/cheat-sheet)
-    * [Vim Tutorial â€“ Tutorialspoint](https://www.tutorialspoint.com/vim/index.htm)
-    * [é³¥å“¥çš„ Linux ç§æˆ¿èœ â€“ ç¬¬ä¹ç« ã€vim ç¨‹å¼ç·¨è¼¯å™¨](http://linux.vbird.org/linux_basic/0310vi.php)
+    * [Vim Tutorial – Tutorialspoint](https://www.tutorialspoint.com/vim/index.htm)
+    * [鳥哥的 Linux 私房菜 – 第九章、vim 程式編輯器](http://linux.vbird.org/linux_basic/0310vi.php)
 
 ---
 ## Contributors
