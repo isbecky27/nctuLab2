@@ -20,6 +20,8 @@ In this lab, we are going to write a Python program which can generate a network
 > * Describe how to execute your program
 > * Show the screenshot of using iPerf command in Mininet
 
+![image](https://github.com/nctucn/lab2-isbecky27/blob/master/result.jpg)
+      
 ---
 ## Description
 
@@ -33,33 +35,62 @@ In this lab, we are going to write a Python program which can generate a network
 > TODO:
 > * Describe the meaning of iPerf command you used in detail
 
+Topo2.png iPref指令
+mininet> h6 iperf -s -u -i 1 > ./out/result &
+host 6 開啟iPerf 以server模式啟動 使用udp通訊協定 每隔1s更新頻寬資訊 結果會傳至out資料夾中
+mininet> h3 iperf -c 10.0.0.6 -u –i 1
+host 3 開啟iPerf 以client模式啟動 並連線到IP 10.0.0.6的server(host 6) 使用udp通訊協定 每隔1s更新頻寬資訊
+   - -s 以server模式啟動
+   - -u 使用udp協議
+   - -i 每隔多少秒更新頻寬資訊
+   - -c 執行client模式啟動，並連線到server的IP
+
+
 ### Tasks
 
 > TODO:
 > * Describe how you finish this work step-by-step in detail
 
 1. **Environment Setup**
-- ��������PieTTY IP��}��140.133.195.69 port��13316(�Ǹ���5�X)
-- �n�J Login:root Password:cn2018
-- ��J���O:git clone https://github.com/nctucn/lab2-isbecky27.git Network_Topology �N�ɮ׸��U�� 
-- ���۵n�Jgithub Username for 'https://github.com': isbecky27 Password for 'https://isbecky27@github.com': <Github Password>
-- �յ۰��� Mininet �ϥΫ��O:sudo mn �h���U�ӭY�]�X���~�T�� �Ҧp:You may wish to try "service ....
-- �h��J���O:sudo service openvswitch-switch start �M��A����@�� sudo mn �Y�i 
+   - 首先先載PieTTY IP位址為140.133.195.69 port為13316(學號末5碼)
+   - 登入 Login:root Password:cn2018
+   - 輸入指令:git clone https://github.com/nctucn/lab2-isbecky27.git Network_Topology 將檔案複製下來
+   - 接著登入github Username for 'https://github.com': isbecky27 
+     和 Password for 'https://isbecky27@github.com': 密碼
+   - 試著執行 Mininet 使用指令:sudo mn 接下來若跑出錯誤訊息
+     如:You may wish to try "service openvswitch-switch start".
+   - 則輸入指令:sudo service openvswitch-switch start 然後再執行一次 sudo mn 即可
 
 2. **Example of Mininet**
-
+   - 試著執行example.py 記得將路徑跳至/root/Network_Topology/src/
+   - 輸入指令執行example.py:sudo chmod +x example.py 和 sudo ./example.py
+   - 則會出現以下的結果
+   - 若跳出錯誤訊息 如:Exception: Error creating interface pair (s1-eth1,s2eth1): 
+                      RTNETLINK answers: File exist
+   - 則輸入指令:sudo mn -c 將其清乾淨後重新執行一次即可
 
 3. **Topology Generator**
-
+   - 13316%3(學號末5碼%3)=2 找出自己要做的圖 topo2.png
+   - 依照topo2.png的圖 寫一個檔名為topology.py的python程式 並將放在和example.py同層
+   - 執行topology.py
+   - 若跳出錯誤訊息 如:Exception: Error creating interface pair (s1-eth1,s2eth1):
+                      RTNETLINK answers: File exist
+   - 則輸入指令:sudo mn -c 將其清乾淨後重新執行一次即可
 
 4. **Measurement**
+   - 用iPerf指令去測試topology.py
+   - topo2.png的測試指令: mininet> h6 iperf -s -u -i 1 > ./out/result &
+                         mininet> h3 iperf -c 10.0.0.6 -u –i 1
+   - 最後的result會在out的資料夾裡
+   - 而packet loss的機率應介於13~18%之間
 
 ---
 ## References
 
 > TODO: 
 > * Please add your references in the following
-
+* **References**
+    * [Iperf頻寬測試工具@ PiNG^2 :: 隨意窩Xuite日誌](https://blog.xuite.net/u870q217/blog/31513614-Iperf%E9%A0%BB%E5%AF%AC%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7)
 * **Mininet**
     * [Mininet Walkthrough](http://mininet.org/walkthrough/)
     * [Introduction to Mininet](https://github.com/mininet/mininet/wiki/Introduction-to-Mininet)
@@ -85,7 +116,7 @@ In this lab, we are going to write a Python program which can generate a network
 > TODO:
 > * Please replace "YOUR_NAME" and "YOUR_GITHUB_LINK" into yours
 
-* [YOUR_NAME](YOUR_GITHUB_LINK)
+* [Ching](https://github.com/isbecky27)
 * [David Lu](https://github.com/yungshenglu)
 
 ---
