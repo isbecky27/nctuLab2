@@ -37,7 +37,9 @@ In this lab, we are going to write a Python program which can generate a network
 
 Topo2.png iPref指令
 mininet> h6 iperf -s -u -i 1 > ./out/result &
+host 6 開啟iPerf 以server模式啟動 使用udp通訊協定 每隔1s更新頻寬資訊 結果會傳至out資料夾中
 mininet> h3 iperf -c 10.0.0.6 -u –i 1
+host 3 開啟iPerf 以client模式啟動 並連線到IP 10.0.0.6的server(host 6) 使用udp通訊協定 每隔1s更新頻寬資訊
    - -s 以server模式啟動
    - -u 使用udp協議
    - -i 每隔多少秒更新頻寬資訊
@@ -88,7 +90,7 @@ mininet> h3 iperf -c 10.0.0.6 -u –i 1
 > TODO: 
 > * Please add your references in the following
 
-https://blog.xuite.net/u870q217/blog/31513614-Iperf%E9%A0%BB%E5%AF%AC%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7
+    * [Iperf頻寬測試工具@ PiNG^2 :: 隨意窩Xuite日誌](https://blog.xuite.net/u870q217/blog/31513614-Iperf%E9%A0%BB%E5%AF%AC%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7)
 
 * **Mininet**
     * [Mininet Walkthrough](http://mininet.org/walkthrough/)
