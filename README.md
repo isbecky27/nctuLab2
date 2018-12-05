@@ -29,19 +29,18 @@ In this lab, we are going to write a Python program which can generate a network
 
 ### Mininet API in Python
 
-- class SwitchTopo(Topo):
-- def build(self):
-- s1 = self.addSwitch('s1')
-- self.addHost('h1')
-- self.addLink(s2,s1,bw = 30,delay = '87us',loss = 3)
-- topo = SwitchTopo()
-- net = Mininet(topo = topo, controller = OVSController,link = TCLink)
-- net.start()
-- net.pingAll()
-- dumpNodeConnections(net.hosts)
-- dumpNodeConnections(net.switches)
-- CLI(net)
-- setLogLevel('info')
+- class SwitchTopo(Topo): //類別SwitchTopo繼承了Topo類別
+- def build(self): //建構topo
+- self.addSwitch('s1') //添加一個switch在拓撲中 名稱為s1
+- self.addHost('h1') //添加host到拓撲中 名稱為h1
+- self.addLink(s2,s1,bw = 30,delay = '87us',loss = 3) //添加雙向連接拓撲 並設定頻寬、delay的時間、loss的比例
+- net = Mininet(topo = topo, controller = OVSController,link = TCLink) //topo使用OvSController創建和管理network並使用TCLink
+- net.start() //啟動拓撲
+- net.pingAll() //所有節點、host彼此測試互連
+- dumpNodeConnections(net.hosts) //轉儲每個host的連接
+- dumpNodeConnections(net.switches) //轉儲每個switch的連接
+- CLI(net) //Mininet CLI啟動
+- setLogLevel('info') //設置Mininet默認輸出級別 設置info它將提供一些有用的信息
  
 
 ### iPerf Commands
@@ -95,6 +94,7 @@ Topo2.png iPref指令
 * **References**
     * [Iperf頻寬測試工具@ PiNG^2 :: 隨意窩Xuite日誌](https://blog.xuite.net/u870q217/blog/31513614-Iperf%E9%A0%BB%E5%AF%AC%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7)
     * [Mininet Python API Reference Manual](http://mininet.org/api/annotated.html)
+    * [SDN網絡系統之Mininet與API詳解](https://tw.saowen.com/a/94f7682f57926074adf7c6701c59e2908972ef1f6b5ce02b178e44e6909a08a3)
 * **Mininet**
     * [Mininet Walkthrough](http://mininet.org/walkthrough/)
     * [Introduction to Mininet](https://github.com/mininet/mininet/wiki/Introduction-to-Mininet)
