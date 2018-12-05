@@ -8,7 +8,9 @@ from mininet.util import dumpNodeConnections
 from mininet.log import setLogLevel 
 from mininet.cli import CLI
 
-
+'''
+create a topology of topo2.png about 5 switches and 10 hosts
+'''
 class SwitchTopo(Topo):
     def build(self):
         # Add all switches s1~s5 to a topology
@@ -131,7 +133,7 @@ class SwitchTopo(Topo):
 Create and test a simple network
 '''
 def simpleTest():
-    # Create a topology with 2 hosts and 1 switch
+    # Create a topology with 10 hosts and 5 switch
     topo = SwitchTopo()
     # Create and manage a network with a OvS controller and use TCLink
     net = Mininet(
