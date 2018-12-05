@@ -37,9 +37,9 @@ In this lab, we are going to write a Python program which can generate a network
 ### iPerf Commands
 
 Topo2.png iPref指令
-'mininet> h6 iperf -s -u -i 1 > ./out/result &'
+- mininet> h6 iperf -s -u -i 1 > ./out/result &
 host 6 開啟iPerf 以server模式啟動 使用udp通訊協定 每隔1s更新頻寬資訊 結果result檔會傳至out資料夾中
-'mininet> h3 iperf -c 10.0.0.6 -u –i 1'
+- mininet> h3 iperf -c 10.0.0.6 -u –i 1
 host 3 開啟iPerf 以client模式啟動 並連線到IP為10.0.0.6的server(host 6) 使用udp通訊協定 每隔1s更新頻寬資訊
    - -s 以server模式啟動
    - -u 使用udp協議
@@ -66,8 +66,8 @@ host 3 開啟iPerf 以client模式啟動 並連線到IP為10.0.0.6的server(host
 
 3. **Topology Generator**
    - 13316%3(學號末5碼%3)=2 找出自己要做的圖 topo2.png
-   - 依照topo2.png的圖 寫一個檔名為topology.py的python程式(code要有註解) 並將放在和example.py同層
-   - 記得code中需加入from mininet.util import dumpNodeConnections 和 dumpNodeConnections(net.hosts) 和 dumpNodeConnections(net.switches
+   - 依照topo2.png的圖 寫一個檔名為topology.py的python程式(code要有註解) 並將放在和example.py同層(可參考example.py)
+   - 記得code中需加入from mininet.util import dumpNodeConnections 和 dumpNodeConnections(net.hosts) 和 dumpNodeConnections(net.switches)轉儲所有switch和host
    - 且加入CLI: from mininet.cli import CLI 和 CLI(net)
    - 再來執行topology.py: sudo ./topology.py 
    - 若跳出錯誤訊息 如:Exception: Error creating interface pair (s1-eth1,s2eth1): RTNETLINK answers: File exist
