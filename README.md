@@ -29,18 +29,28 @@ In this lab, we are going to write a Python program which can generate a network
 
 ### Mininet API in Python
 
-> TODO:
-> * Describe the meaning of Mininet API in Python you used in detail
-
-
+- class SwitchTopo(Topo):
+- def build(self):
+- s1 = self.addSwitch('s1')
+- self.addHost('h1')
+- self.addLink(s2,s1,bw = 30,delay = '87us',loss = 3)
+- topo = SwitchTopo()
+- net = Mininet(topo = topo, controller = OVSController,link = TCLink)
+- net.start()
+- net.pingAll()
+- dumpNodeConnections(net.hosts)
+- dumpNodeConnections(net.switches)
+- CLI(net)
+- setLogLevel('info')
+ 
 
 ### iPerf Commands
 
 Topo2.png iPref指令
 - mininet> h6 iperf -s -u -i 1 > ./out/result &
-host 6 開啟iPerf 以server模式啟動 使用udp通訊協定 每隔1s更新頻寬資訊 結果result檔會傳至out資料夾中
+//host 6 開啟iPerf 以server模式啟動 使用udp通訊協定 每隔1s更新頻寬資訊 結果result檔會傳至out資料夾中
 - mininet> h3 iperf -c 10.0.0.6 -u –i 1
-host 3 開啟iPerf 以client模式啟動 並連線到IP為10.0.0.6的server(host 6) 使用udp通訊協定 每隔1s更新頻寬資訊
+//host 3 開啟iPerf 以client模式啟動 並連線到IP為10.0.0.6的server(host 6) 使用udp通訊協定 每隔1s更新頻寬資訊
    - -s 以server模式啟動
    - -u 使用udp協議
    - -i 每隔多少秒更新頻寬資訊
