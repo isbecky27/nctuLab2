@@ -50,6 +50,8 @@ Topo2.png iPref指令
   - host 6 開啟iPerf 以server模式啟動 使用udp通訊協定 每隔1s更新頻寬資訊 結果result檔會傳至out資料夾中
 - mininet> h3 iperf -c 10.0.0.6 -u –i 1
   - host 3 開啟iPerf 以client模式啟動 並連線到IP為10.0.0.6的server(host 6) 使用udp通訊協定 每隔1s更新頻寬資訊
+  
+- iPerf指令的意思    
    - -s 以server模式啟動
    - -u 使用udp協議
    - -i 每隔多少秒更新頻寬資訊
