@@ -77,9 +77,9 @@ Topo2.png iPref指令
 
 3. **Topology Generator**
    - 13316%3(學號末5碼%3)=2 找出自己要做的圖 topo2.png
-   - 依照topo2.png的圖 寫一個檔名為topology.py的python程式(code要有註解) 並將放在和example.py同層(可參考example.py)
+   - 依照topo2.png的圖 參考example.py寫一個檔名為topology.py的python程式(code要有註解) 並將放在和example.py同層
    - 記得code中需加入from mininet.util import dumpNodeConnections 和 dumpNodeConnections(net.hosts) 和 dumpNodeConnections(net.switches)轉儲所有switch和host
-   - 且加入CLI: from mininet.cli import CLI 和 CLI(net)
+   - 且加入CLI: from mininet.cli import CLI 和 CLI(net) 啟動Mininet CLI
    - 再來執行topology.py: sudo ./topology.py 
    - 若跳出錯誤訊息 如:Exception: Error creating interface pair (s1-eth1,s2eth1): RTNETLINK answers: File exist
    - 則輸入指令:sudo mn -c 將其清乾淨後重新執行一次即可
